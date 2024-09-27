@@ -4,7 +4,7 @@ import {User} from "@prisma/client"
 import  bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 
-//Register sebagai create User
+//Register create User
 export const register = async(body: User) => {
     const {error} = validation.registerSchema.validate(body)
     if(error){
