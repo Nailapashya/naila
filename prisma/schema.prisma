@@ -20,24 +20,12 @@ model User {
 
 model Level {
   id    Int       @id @default(autoincrement())
-  name  LevelEnum
+  name  String
   users User[]
 }
 
 model Department {
   id    Int            @id @default(autoincrement())
-  name  DepartmentEnum
+  name  String
   users User[]
-}
-
-enum LevelEnum {
-  JUNIOR
-  MID
-  SENIOR
-}
-
-enum DepartmentEnum {
-  HR
-  IT
-  MARKETING
 }

@@ -13,16 +13,16 @@ export const Register = async (req:Request , res:Response ) => {
         return res.status(500).json(error);
     }
 }
-export const Registerr = async  (req:Request , res:Response) => {
-    try {
-        const { body } = req;
-        const data = await service.register(body as User);
-        return res.status(200).json(data);
-    } catch (error) {
-        console.log(error);
-        return res.status(500).json(error);
-    }
-}
+// export const Registerr = async  (req:Request , res:Response) => {
+//     try {
+//         const { body } = req;
+//         const data = await service.register(body as User);
+//         return res.status(200).json(data);
+//     } catch (error) {
+//         console.log(error);
+//         return res.status(500).json(error);
+//     }
+// }
 
 // Login User
 export const login = async (req:Request , res:Response ) => {
@@ -37,7 +37,7 @@ export const login = async (req:Request , res:Response ) => {
 };
 
 // Get User by ID (READ User)
-export const findById = async (req:Request , res:Response ) => {
+export const findById = async (req:Request, res:Response ) => {
     try {
         const userId = parseInt(req.params.id);
         const data = await service.findById(userId);

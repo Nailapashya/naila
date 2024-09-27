@@ -25,8 +25,8 @@ export const register = async(body: User) => {
             name: body.name,
             email: body.email,
             password: hashPassword,
-            levelId: 1,
-            departmentId: 1
+            levelId: body.levelId,
+            departmentId: body.departmentId
         }
     })
 

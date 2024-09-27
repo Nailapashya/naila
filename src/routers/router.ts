@@ -1,15 +1,16 @@
 import { Router } from "express"
-import * as AuthController from "../controllers/authController"
+
 import { authentication } from "../middlewares/authentication"
+import { deleteUser, findAll, findById, login, Register, updateUser } from "../controllers/controller"
+
 const router = Router()
 
-
-router.post("/register",AuthController.Register)
-router.post("/login", AuthController.login)
-router.get('/', authentication, AuthController.findAll)
-router.get('/:id', authentication, AuthController.findById)
-router.put('/:id', authentication, AuthController.updateUser)
-router.delete('/:id', authentication, AuthController.deleteUser)
+router.post("/register", Register)
+router.post("/login", login)
+router.get('/', authentication, findAll)
+router.get('/:id', authentication, findById)
+router.put('/:id', authentication, updateUser)
+router.delete('/:id', authentication, deleteUser)
 
 
 export default router                                                                                

@@ -15,6 +15,6 @@ export const updateSchema = joi.object({
   name: joi.string().optional(),
   email: joi.string().optional().email(),
   password: joi.string().optional().min(8),
-  levelId: joi.string().optional(),
-  departmentId: joi.string().optional()
+  levelId: joi.number().optional(),
+  departmentId: joi.number().optional()
 });
